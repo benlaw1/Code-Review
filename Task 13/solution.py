@@ -21,9 +21,9 @@ def nearest_neighbour(X, target_X):
     Find the index of the nearest point in X to the target position
     """
 
-    # do your thing here
+    difference =  X - target_X
 
-    return closest_index
+    return np.argmin(np.sqrt(difference[:,0]**2 + difference[:,1]**2))
 
 start = time.time()
 # Find the index of the nearest point
@@ -35,3 +35,4 @@ print('Elapsed time:', end - start)
 ax.plot(X[index, 0], X[index, 1], 'ob')
 
 plt.show()
+
